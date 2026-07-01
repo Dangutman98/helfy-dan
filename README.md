@@ -87,3 +87,37 @@ Here is the consumer console output showing that database changes are successful
 - First, the consumer starts up (`[Consumer] Starting`) and connects to Kafka.
 - Then, it locates the group coordinator and joins the consumer group (`Consumer has joined the group`).
 - Finally, when a login occurs and a new token is added to the database, Debezium captures the change and the consumer prints it out (`database_change` JSON containing the inserted row).
+
+---
+
+## Manual Testing (API & Database)
+
+You can manually verify the system endpoints and database records.
+
+### 1. Database Verification
+After a user logs in, you can connect to the database to view the `users` and `user_tokens` tables. 
+
+You can connect directly via the running Docker container:
+```bash
+docker exec -it helfy-dan-mysql-1 mysql -udan -pdan123 home-test
+```
+
+Or using any external DB client with the following details:
+- **Host:** `localhost`
+- **Port:** `3306`
+- **Username:** `dan` (or `root`)
+- **Password:** `dan123`
+- **Database:** `home-test`
+
+![Database Select](./screenshots/Db_select.png)
+
+---
+
+### 2. Postman API Testing
+You can also interact directly with the API using Postman:
+
+- **POST `/login`:** Send `{"email":"dan@dan.com", "password":"dan123"}` (as JSON) to `http://localhost:3000/login` to retrieve a token.
+![Postman Login (POST)](./screenshots/Post_Postman.png)
+
+- **GET `/profile`:** Send a request to `http://localhost:3000/profile` with the `x-auth-token` header to fetch the user profile.
+![Postman Profile (GET)](./screenshots/Get_Postman.png)
