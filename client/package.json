@@ -1,0 +1,6 @@
+{
+  "name": "client",
+  "scripts": {
+    "start": "node app.js"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "node src/main-app-layout.js"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "log4js": "^6.9.1"
+  }
+}

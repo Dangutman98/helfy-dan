@@ -1,0 +1,11 @@
+{
+  "name": "api",
+  "scripts": {
+    "start": "node src/main-app-layout.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
+    "log4js": "^6.9.1"
+  }
+}
