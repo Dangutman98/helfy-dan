@@ -109,7 +109,7 @@ Or using any external DB client with the following details:
 - **Password:** `dan123`
 - **Database:** `home-test`
 
-![Database Select](./screenshots/Db_select.png)
+![Database Select](./screenshots/db_select.png)
 
 ---
 
